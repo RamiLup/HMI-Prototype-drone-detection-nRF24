@@ -1,101 +1,186 @@
-# Efficient, low-cost prototype for a fast-scanning drone detection system 
-# based on 2.4GHz channel power analysis, utilizing three nRF24 modules and an ESP32
+# Efficient, low-cost prototype drone detection system based on Elecrow HMI , 3 x 2.4GHz nRF24L01 modules, ESP32Wroom 
+
 <br>
+
+This prototype was engineered as a proof of concept (POC) to demonstrate 
+the technical feasibility of a fast-development approach for a drone 
+proximity alert system. Designed for cost-effective mass production and 
+broad area coverage, it prioritizes the use of widely available components 
+and an efficient, streamlined design.
+
+The project involved every stage of development, from hardware design and 
+software integration to field testing. The HMI was optimized for intuitive 
+use, incorporating lessons from past projects to make all scanning features 
+easy to access and operate
+
+<br>
+
 <p align="center">
  
-![InHousePatrol](https://github.com/user-attachments/assets/44355cbc-a66c-48aa-9ca1-b6daf258144a)
-
+ ![System](https://github.com/user-attachments/assets/85bfa612-b3fe-44b3-82a2-0c31227e1318)
 
 </p>
-</br>
+<br>
 
 ## TL;DR:
 
-Rombi is an innovative mobile scarecrow using an old iRobot 
-
-## How it started ?
-While organizing the storage room, I came across an old Roomba 
-
-The experiment was a success, and I moved on to the improvement 
+Built in just a week using readily available parts, this prototype drone 
+detection system includes an intuitive HMI for easy setup and monitoring. 
+Powered by an ESP32 microcontroller, it features nRF24L01+ transceivers 
+and directional antennas to achieve a detection range of over 200 meters.
 
 <br>
 
-<p align="center">
-
-
-<p align="center">
-  <img src="/media/testing the protocl.jpg" alt="web_server" width="300" height="500"/>
-</p>
-
- </p>
+# Drone Proximity Alert System Prototype
+This prototype showcases a fast-development approach for a drone proximity 
+alert system. It is designed for cost-effective mass production and 
+extensive area coverage, using readily available components and a 
+straightforward design
 
 <br>
 
-
-I assembled an ESP32 on a breadboard, along with some voltage 
-converters, and prepared a set of HEX commands in Roomba’s 
-
-
-[The full protocol is here](media/iRobot_Roomba_500_Open_Interface_Spec.pdf)
-
-<br>
-
-And it worked.
-<br>
-
-
-
-<br>
-It’s possible to execute dozens of commands, from starting and 
-
-<p align="center">
-  <img src="/media/web_server_with_video.png" alt="web_server" width="300" height="500"/>
-</p>
-
-It works excellently when connected to the same Wi-Fi network. 
-
-<p align="center">
-  <img src="/media/vlcsnap-2024-08-27-21h21m46s777.png" alt="Rombi" width="700" height="300"/>
-</p>
-
-
-I can even get a real time video from the Roomba's patrol.
-The current version supports the following commands via the Web Server and Telegram:
-- Start patrol
-
-
-The sensors are Arduino-based and communicate directly with the web 
-server within the Roomba, all connected to the same Wi-Fi network.
-
-
-## Summary:
+## Hardware:
 
 <p align="center">
  
- https://github.com/user-attachments/assets/44740bdd-6202-4ac6-9fad-2e479e566b7c
+![Visio](https://github.com/user-attachments/assets/7d347054-d3ab-441a-b8b5-690c273c44d0)
 
 </p>
 <br>
 
-And, of course, there’s a bonus. Implementing this idea allows me 
-to learn more about Arduino hardware and software, image processing,
-PCB design, CAD software,  sensor design and much more. 
-It’s pure enjoyment.
+# Components
+Each system utilizes the following components (multiple systems can be deployed):
 
+HMI: 5" Elecrow HMI display (only one required)
+RF Module: Three or more Nordic Semiconductor nRF24L01+ 2.4GHz transceivers
+Microcontroller: ESP32 for managing RF modules and HMI communication
+Antennas: Directional (YAGI) and omnidirectional antennas
+Power Source: External battery
+Voltage Regulator
+Additional Materials: Case, RF cables , Decoupling Capacitors 
 
-## Notes:
+![Prototype](https://github.com/user-attachments/assets/b6ed31d8-cd61-4bb5-befa-e3c6b8c72e3d)
 
-1. Virtu
-3. Smag t
-source.
-4. The comoar
+<br>
 
+# nRF24L01+
 
-## Planned Improvements for the Next Versions:
+The system uses the nRF24L01+ transceiver module, which features a 
+built-in power amplifier and offers 125 selectable channels within 
+the globally license-free 2.4GHz ISM band
 
-1. A hollow body (e.g., made of metal mesh) for the scarecrow boady
-to make it less sensitive to strong winds.
-2. Sending the Roomba directly to the sensor area from which the 
-alert was triggered.
-3. Adjusting the Roomba's travel path based on the shape and size 
-of the balcony.
+[NRF24L01 +PA.pdf](https://github.com/user-attachments/files/17596522/NRF24L01.%2BPA.pdf)
+
+<br>
+
+# Functional Description
+The core concept utilizes variations in signal strength relative to 
+distance. As a drone approaches, its signal strength increases, 
+allowing for detection. By integrating both directional and omnidirectional 
+antennas, the system performs precise calculations and applies refined logic
+to minimize false alarms while maximizing coverage and sensitivity.
+
+Using three nRF24 units provides greater flexibility in system 
+operation and performance. Since each RF module is controlled separately, 
+they can be configured for specific ranges, individual channels, or a 
+full scan, significantly increasing scanning speed.
+
+<br>
+
+# Development Stages
+
+## Needs Assessment and Initial Testing: 
+Initial drone flight tests were performed using a basic 
+nRF24L01+ setup with various antennas to study signal 
+behavior and optimize reception quality.
+
+## Hardware Design: 
+Based on these test results, the hardware was configured 
+with three nRF24L01+ receivers and YAGI directional antennas 
+to improve signal sensitivity and adding a direction-finding 
+capabilities.
+
+## Software Development: 
+Code was developed for the ESP32 to control the nRF24L01+ 
+receivers. The HMI was designed with a user-friendly interface, 
+providing flexibility and options for future feature enhancements, 
+with a focus on efficient field operation and clear alert displays.
+
+## Software Implementation: 
+
+The system software is developed using Arduino IDE for the ESP32, managing 
+control of the three nRF24L01+ modules, I2C communication for the OLED 
+display, and serial connectivity to the HMI. The HMI interface, created 
+with the [LVGL library](https://lvgl.io/) in Visual Studio, enables rapid 
+GUI development, providing an easy-to-use interface and clear visual 
+feedback during field operations and experiments.
+
+<br>
+
+# HMI
+The HMI includes two screens:
+<br>
+![Screen1-run](https://github.com/user-attachments/assets/b043b898-d329-4eb1-b6eb-5ae83eae1968)
+![Screen2-settings](https://github.com/user-attachments/assets/68e6e1c3-a71e-4158-bfae-f970eb89b5e6)
+<br>
+
+## nRF Configuration and Activation: 
+Individual control and parameter setting for each nRF24L01+ receiver.
+
+<br>
+
+## Channel Monitoring: 
+Selection and monitoring of specific channels of interest within the 2.4GHz band.
+
+<br>
+
+## HMI Cost Optimization: 
+A single HMI unit is designed to connect to multiple drone detection systems, reducing overall costs.
+Future Networked Deployment: Plans include connecting multiple systems within a closed network for improved detection capabilities and operational efficiency.
+
+<br>
+
+# Conclusions & Key Notes
+
+## Rapid Prototyping: 
+The prototype was developed within a week, demonstrating the efficiency 
+of the chosen approach.
+
+<br>
+
+## Enhanced Direction Finding: 
+Adding more channels with dedicated directional antennas can significantly 
+improve direction-finding accuracy.
+
+<br>
+
+## Environmental Considerations: 
+Using a metallic enclosure and positioning antennas up to 2 meters away from 
+the unit significantly improves system sensitivity and resilience to 
+environmental noise. 
+
+<br>
+
+## Scanning Features:
+
+* Full Spectrum Scanning: Scan all available frequencies using
+  all nRF modules
+* Selective Channel Monitoring: Monitor specific channels or a defined
+  frequency range
+* Individual nRF Configuration: Configure different scanning frequencies
+* Dedicated channel for each nRF24L01+ receiver (up to 3 in total)
+* Individual alerts can be configured for each nRF module
+
+# Final Field Testing
+Successful field tests were conducted with a drone flying at altitudes
+between 15 and 25 meters. The system, equipped with two directional 
+antennas and an omnidirectional antenna for ambient noise reference, 
+detected the drone at distances over 200 meters
+
+<br>
+
+<p align="center">
+ 
+![System](https://github.com/user-attachments/assets/59470f9b-9f4f-4d8e-aded-def212b6a98c)
+
+</p>
