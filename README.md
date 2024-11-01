@@ -135,8 +135,12 @@ Selection and monitoring of specific channels of interest within the 2.4GHz band
 <br>
 
 ## HMI Cost Optimization: 
-A single HMI unit is designed to connect to multiple drone detection systems, reducing overall costs.
-Future Networked Deployment: Plans include connecting multiple systems within a closed network for improved detection capabilities and operational efficiency.
+
+* A single HMI unit is designed to connect to multiple drone detection systems,
+reducing overall costs.
+
+* Future Networked Deployment: Plans include connecting multiple systems within a closed network
+for improved detection capabilities and operational efficiency.
 
 <br>
 
