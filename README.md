@@ -2,16 +2,18 @@
 
 <br>
 
-This prototype was engineered as a POC to demonstrate to demonstrate 
-the technical feasibility of a fast-development approach for a drone 
-proximity alert system. Designed for cost-effective mass production and 
+This prototype was engineered as a POC to demonstrate the technical
+feasibility of a fast-development approach for a drone proximity 
+alert system.<br /> 
+
+Designed for cost-effective mass production and 
 broad area coverage, it prioritizes the use of widely available components 
-and an efficient, streamlined design.
+and an efficient, streamlined design.<br />
 
 The project involved every stage of development, from hardware design and 
 software integration to field testing. The HMI was optimized for intuitive 
 use, incorporating lessons from past projects to make all scanning features 
-easy to access and operate
+easy to access and operate. <br />
 
 <br>
 
