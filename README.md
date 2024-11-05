@@ -2,7 +2,7 @@
 
 <br>
 
-This prototype was engineered as a proof of concept (POC) to demonstrate 
+This prototype was engineered as a POC to demonstrate to demonstrate 
 the technical feasibility of a fast-development approach for a drone 
 proximity alert system. Designed for cost-effective mass production and 
 broad area coverage, it prioritizes the use of widely available components 
