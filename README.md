@@ -51,13 +51,12 @@ straightforward design
 # Components
 Each system utilizes the following components (multiple systems can be deployed):
 
-HMI: 5" Elecrow HMI display (only one required)
-RF Module: Three or more Nordic Semiconductor nRF24L01+ 2.4GHz transceivers
-Microcontroller: ESP32 for managing RF modules and HMI communication
-Antennas: Directional (YAGI) and omnidirectional antennas
-Power Source: External battery
-Voltage Regulator
-Additional Materials: Case, RF cables , Decoupling Capacitors 
+HMI: 5" Elecrow HMI display (only one required)<br /> 
+RF Module: Three or more Nordic Semiconductor nRF24L01+ 2.4GHz transceivers<br /> 
+Microcontroller: ESP32 for managing RF modules and HMI communication<br /> 
+Antennas: Directional (YAGI) and omnidirectional antennas<br /> 
+Power Source: External battery<br /> 
+Additional Materials: Case, RF cables , Decoupling Capacitors , Voltage Regulator<br /> 
 
 ![Prototype](https://github.com/user-attachments/assets/b6ed31d8-cd61-4bb5-befa-e3c6b8c72e3d)
 
