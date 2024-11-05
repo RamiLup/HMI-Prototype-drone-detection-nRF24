@@ -2,18 +2,12 @@
 
 <br>
 
-This prototype was engineered as a POC to demonstrate the technical
-feasibility of a fast-development approach for a drone proximity 
-alert system.<br /> 
+This document details the development and capabilities of a prototype drone proximity 
+alert system, engineered as a POC to demonstrate the feasibility of rapid development 
+for this technology.
 
-Designed for cost-effective mass production and 
-broad area coverage, it prioritizes the use of widely available components 
-and an efficient, streamlined design.<br />
-
-The project involved every stage of development, from hardware design and 
-software integration to field testing. The HMI was optimized for intuitive 
-use, incorporating lessons from past projects to make all scanning features 
-easy to access and operate. <br />
+The system is designed for cost-effective mass production and broad area coverage, 
+prioritizing the utilization of readily available components and an efficient design.
 
 <br>
 
@@ -75,16 +69,11 @@ the globally license-free 2.4GHz ISM band
 <br>
 
 # Functional Description
-The core concept utilizes variations in signal strength relative to 
-distance. As a drone approaches, its signal strength increases, 
-allowing for detection. By integrating both directional and omnidirectional 
-antennas, the system performs precise calculations and applies refined logic
-to minimize false alarms while maximizing coverage and sensitivity.
-
-Using three nRF24 units provides greater flexibility in system 
-operation and performance. Since each RF module is controlled separately, 
-they can be configured for specific ranges, individual channels, or a 
-full scan, significantly increasing scanning speed.
+This drone detection system leverages signal strength variations to identify 
+approaching drones. The system employs a combination of directional and 
+omnidirectional antennas to enhance detection accuracy and minimize false alarms.  
+The integration of three nRF24 units provides operational flexibility, enabling customized 
+configurations for range, channel selection, and scanning speed optimization.
 
 <br>
 
