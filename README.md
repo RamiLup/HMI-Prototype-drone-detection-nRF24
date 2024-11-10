@@ -38,8 +38,8 @@ straightforward design
 ## Hardware:
 
 <p align="center">
- 
-![Visio](https://github.com/user-attachments/assets/7d347054-d3ab-441a-b8b5-690c273c44d0)
+
+![Visio](https://github.com/user-attachments/assets/f88e3fbc-fcf9-400a-95a2-74f59e610b47)
 
 </p>
 <br>
